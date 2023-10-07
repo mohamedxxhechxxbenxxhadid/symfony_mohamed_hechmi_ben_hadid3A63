@@ -1,0 +1,13 @@
+<h1>bonjour {{n}}</h1>
+    {% for author in authors %}
+        <li>{{ author.id}}</li>
+        <li>{{ author.username}}</li>
+        <li>{{ author.email}}</li>
+        <li>{{ author.nb_books}}</li>
+        <img  style="height:200px;width:200px;"src={{author.picture}}/><br/>
+        {% if author.nb_books >0  %}
+            <button type="button">buy Book!</button>
+        {% endif %}
+        </br>
+        </br>
+    {% endfor %}

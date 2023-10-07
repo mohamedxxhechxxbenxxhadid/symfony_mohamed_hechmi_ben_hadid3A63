@@ -1,0 +1,11 @@
+{% if author is not empty %}
+<li>{{ author.username | upper}}</li>
+<li>{{ author.email}}</li>
+<li>{{ author.nb_books}}</li>
+<img  style="height:200px;width:200px;"src={{author.picture}}/><br/>
+{% if author.nb_books >0  %}
+    <button type="button">buy Book!</button>
+{% endif %}
+</br>
+</br>
+{% endif %}

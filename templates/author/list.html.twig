@@ -1,0 +1,19 @@
+{% if authors | default(null)  %}
+    <h1> nombre des auteurs : {{authors | length}}  </h1>
+    {% if authors is not empty   %}
+        {% for author in authors %}
+            {% if author is not empty %}
+                <li>{{ author.username | upper}}</li>
+                <a href="{{ path('app_ShowDetails', {id :author.id}) }}">Details</a><br/>
+                {% if author.nb_books >0  %}
+                    <button type="button">buy Book!</button>
+                {% endif %}
+                </br>
+                </br>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+{% endif %}
+
+
+
